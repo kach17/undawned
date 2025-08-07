@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Emperor vs Heroes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div id="tooltip" class="tooltip"></div>
+        <div class="game-header">
+            <h1>Dark Emperor vs Heroes</h1>
+            <div class="resource-bar">
+                <span>Daen: </span>
+                <span id="daen-count">0</span>
+            </div>
+        </div>
+        
+        <div class="game-board">
+            <canvas id="game-canvas"></canvas>
+        </div>
+        
+        <div class="minion-selection">
+            <h2>Minions</h2>
+            <div id="minion-buttons" class="minion-buttons">
+                <!-- Minion buttons will be added here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Core Game Engine -->
+    <script src="js/engine/tooltip.js"></script>
+    <script src="js/engine/renderer.js"></script>
+    <script src="js/engine/game.js"></script>
+    
+    <!-- Game Entities - Load unit.js first as it's the base class -->
+    <script src="js/entities/unit.js"></script>
+    <script src="js/entities/hero.js"></script>
+    <script src="js/entities/minion.js"></script>
+    <script src="js/entities/tile.js"></script>
+    <script src="js/entities/lane.js"></script>
+    
+    <!-- Input Handler - Depends on Game class -->
+    <script src="js/engine/input.js"></script>
+    
+    <!-- Game Initialization - Load last as it depends on everything else -->
+    <script src="js/main.js"></script>
+</body>
+</html>
